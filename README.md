@@ -6,7 +6,7 @@ Interactive geovisualizations of New York state's cancer statistics made using P
 3. [Introduction](#into)
 4. [Existing Visualizations](#existing-viz)
 5. [Datasets & Methods](#methods)
-6. [Results](#results)git p
+6. [Results](#results)
 7. [Conclusion](#conclusion)
 8. [Future Work](#future-work)
 9. [References & Acknowledgements](#references)
