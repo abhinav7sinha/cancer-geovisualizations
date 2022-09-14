@@ -3,7 +3,7 @@
 Interactive geovisualizations of New York state's cancer statistics made using Plotly
 1. [How to use](#how-to)
 2. [Abstract](#abstract)
-3. [Introduction](#into)
+3. [Introduction](#intro)
 4. [Existing Visualizations](#existing-viz)
 5. [Datasets & Methods](#methods)
 6. [Results](#results)
@@ -14,7 +14,7 @@ Interactive geovisualizations of New York state's cancer statistics made using P
 ## 2. Abstract<a name="abstract"/>
 Cancer is a leading cause of death in the state of New York. In 2018, the latest year for which Cancer incidence data is available, New York reported 114,373 new cases - 4th highest in the country [[1](#1)]. The incidence rate was 472.2 per 100,000 people - highest among the ten states with the most cases. An increased incidence rate points to increased exposure to cancer-causing risk factors. Analyzing geographical Cancer data helps to identify emerging Cancer clusters, understand community screening needs, and direct surveillance efforts. In this project, I explore geographical visualization techniques to better understand the impact of various Cancers on New York's counties. I use New York Department of Health's publicly available Cancer registry dataset to Geovisualize county-wise Cancer data. Using data visualization design principles, I improve upon existing cancer visualizations for the State of New York - and discuss the process here.
 
-## 3. Introduction<a name="into"/>
+## 3. Introduction<a name="intro"/>
 Cancer is a generic term used to cover a large group of diseases where abnormal cells multiply uncontrollably in a part of the human body. It is a leading cause of death in the US. Even in 2020, the number of deaths caused by Cancer exceeded that of Covid-19. However, these trends are improving consistently- death rates went from 200.8 per 100,000 in 1999 to 146.2 per 100,000 in 2019 [[2](#2)].
 
 **Motivation**: A major contributing factor to this improvement is the usage of data visualization to identify patterns in screening, detection, and treatment of the disease. And there is tremendous scope of improvement as well - an estimated 42% of all cancer cases and nearly one-half of all cancer deaths in the United States were attributable to evaluated risk factors, many of which could have been mitigated by effective preventive strategies [[8](#8)].
@@ -24,6 +24,17 @@ Public health officials use Cancer incidence and mortality maps to identify area
 These increased incidence rates could be attributed to risk factors such as smoking, Cancer-causing chemicals (carcinogens), obesity, hormones, chronic inflammation, radiation, viruses, and a lack of exercise [[4](#4)]. So, correlating county-wise incidence data with rates of the aforementioned risk factors could provide public health officials with valuable information on how to allocate resources to the affected populations. We use scatterplots to visualize the correlation between cancer incidence/mortality and these risk factors. We also quantify this correlation using Pearson’s correlation coefficient.
 
 Cancer occurs in both males and females. However, there are stark differences in the pathogenesis, diagnosis, and prognosis of these cancers between males and females [[5](#5)]. We visualize cancer incidence and mortality data for both males and females to highlight these differences.
+
+## 4. Existing Visualizations<a name="existing-viz"/>
+### 4.1. CDC's national map depicting Cancer incidence
+Figure 1 shows a color-coded interactive map depicting the age-adjusted cancer incidence rate for every US state. Clicking on any state synchronously updates the bar graphs shown in Figure 2 and Figure 3, rendering the top 10 Cancer types for that state by incidence and mortality rates, respectively [[1](#1)].
+
+Though the map is aesthetically pleasing and does well to represent the incidence and mortality rate at a national scale, there are ways in which it can be improved. Firstly, the labels are too small and can be enlarged for better viewing. Secondly, visualizing the incidence and mortality rate for specific types of cancers (instead of all cancers) could reveal insightful information about cancer clusters. Finally, even better would be to break this data further into counties; this could provide valuable guidance to public health officials on how to direct preventive and treatment efforts.
+
+| ![figure-1.png](figures/figure-1.png) |
+|:--:|
+| <b>Figure 1.</b> Cancer incidence rates for US states, 2018 (CDC)|
+
 
 ## 9. References & Acknowledgements<a name="references"/>
 1.	https://gis.cdc.gov/Cancer/USCS/#/AtAGlance/<a name="1"/>
