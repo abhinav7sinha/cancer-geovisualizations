@@ -31,7 +31,7 @@ Cancer occurs in both males and females. However, there are stark differences in
 
 Though the map is aesthetically pleasing and does well to represent the incidence and mortality rate at a national scale, there are ways in which it can be improved. Firstly, the labels are too small and can be enlarged for better viewing. Secondly, visualizing the incidence and mortality rate for specific types of cancers (instead of all cancers) could reveal insightful information about cancer clusters. Finally, even better would be to break this data further into counties; this could provide valuable guidance to public health officials on how to direct preventive and treatment efforts.
 
-| ![figure-1.png](figures/figure-1.png <a name="figure-1"/> ) |
+| ![figure-1.png <a name="figure-1"/> ](figures/figure-1.png) |
 |:--:|
 | <b>Figure 1.</b> Cancer incidence rates for US states, 2018 (CDC) |
 
