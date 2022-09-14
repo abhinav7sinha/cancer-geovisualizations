@@ -27,11 +27,11 @@ Cancer occurs in both males and females. However, there are stark differences in
 
 ## 4. Existing Visualizations<a name="existing-viz"/>
 ### 4.1. CDC's national map depicting Cancer incidence
-Figure 1 shows a color-coded interactive map depicting the age-adjusted cancer incidence rate for every US state. Clicking on any state synchronously updates the bar graphs shown in Figure 2 and Figure 3, rendering the top 10 Cancer types for that state by incidence and mortality rates, respectively [[1](#1)].
+[Figure 1](#figure-1) shows a color-coded interactive map depicting the age-adjusted cancer incidence rate for every US state. Clicking on any state synchronously updates the bar graphs shown in Figure 2 and Figure 3, rendering the top 10 Cancer types for that state by incidence and mortality rates, respectively [[1](#1)].
 
 Though the map is aesthetically pleasing and does well to represent the incidence and mortality rate at a national scale, there are ways in which it can be improved. Firstly, the labels are too small and can be enlarged for better viewing. Secondly, visualizing the incidence and mortality rate for specific types of cancers (instead of all cancers) could reveal insightful information about cancer clusters. Finally, even better would be to break this data further into counties; this could provide valuable guidance to public health officials on how to direct preventive and treatment efforts.
 
-| ![figure-1.png](figures/figure-1.png) |
+| ![figure-1.png](figures/figure-1.png) |<a name="figure-1"/>
 |:--:|
 | <b>Figure 1.</b> Cancer incidence rates for US states, 2018 (CDC)|
 
