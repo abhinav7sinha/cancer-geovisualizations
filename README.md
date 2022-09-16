@@ -31,9 +31,9 @@ Figure 1 shows a color-coded interactive map depicting the age-adjusted cancer i
 
 Though the map is aesthetically pleasing and does well to represent the incidence and mortality rate at a national scale, there are ways in which it can be improved. Firstly, the labels are too small and can be enlarged for better viewing. Secondly, visualizing the incidence and mortality rate for specific types of cancers (instead of all cancers) could reveal insightful information about cancer clusters. Finally, even better would be to break this data further into counties; this could provide valuable guidance to public health officials on how to direct preventive and treatment efforts.
 
-| ![figure-1.png](figures/figure-1.png) |
 |:--:|
 | <b>Figure 1.</b> Cancer incidence rates for US states, 2018 (CDC) |
+| ![figure-1.png](figures/figure-1.png) |
 
 
 ## 9. References & Acknowledgements<a name="references"/>
