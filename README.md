@@ -30,7 +30,9 @@ These increased incidence rates could be attributed to risk factors such as smok
 Cancer occurs in both males and females. However, there are stark differences in the pathogenesis, diagnosis, and prognosis of these cancers between males and females [[5](#5)]. I visualize cancer incidence and mortality data for both males and females to highlight these differences.
 
 ## 4. Existing Visualizations<a name="existing-viz"/>
+
 ### 4.1. CDC's national map depicting Cancer incidence
+
 [Figure 1](#figure-1) shows a color-coded interactive map depicting the age-adjusted cancer incidence rate for every US state. Clicking on any state synchronously updates the bar graphs shown in [Figure 2](#figure-2) and [Figure 3](#figure-3), rendering the top 10 Cancer types for that state by incidence and mortality rates, respectively [[1](#1)].
 
 Though the map is aesthetically pleasing and does well to represent the incidence and mortality rate at a national scale, there are ways in which it can be improved. Firstly, the labels are too small and can be enlarged for better viewing. Secondly, visualizing the incidence and mortality rate for specific types of cancers (instead of all cancers) could reveal insightful information about cancer clusters. Finally, even better would be to break this data further into counties; this could provide valuable guidance to public health officials on how to direct preventive and treatment efforts.
@@ -54,6 +56,7 @@ Though the map is aesthetically pleasing and does well to represent the incidenc
 | Top 10 Cancers with highest mortality rate, 2018, 2018 (CDC) |
 
 ### 4.2. Interactive county-map of New York
+
 [Figure 4](#figure-4) shows a Cancer Visualization map from New York State Department of Health's website [[6](#6)]. It is an interactive synchronized map. Clicking inside a county within the Map opens up a new HTML page with that county's Cancer Incidence and mortality data. Unfortunately, the color-coding of the visualization is poor, it is not colorblind-friendly, and most importantly, it does not display any information about the data it is representing. This visualization could be made much better by representing the mortality/incidence rates on the Map using a visually appealing color-coding scheme (Python's Viridis, for example).
 
 <h4 align="center" id="figure-4">Figure 4</h4>
@@ -63,6 +66,7 @@ Though the map is aesthetically pleasing and does well to represent the incidenc
 | NY State Department of Health's Cancer Visualization Map |
 
 ### 4.3. Synchronized map showing yearly changes in Cancer mortality rates
+
 [Figure 5](#figure-5) shows a synchronized map with graph animation [[7](#7)]. It displays changes over time in yearly, age-adjusted Cancer mortality rates at the county levels for the United States from 1968 through 2017. The visualization is aesthetically pleasing but inaccessible as the bars on the left are too small, and the labels are tough to read. Furthermore, it only displays the total Cancer mortality rates across counties. This visualization could be much more helpful if it would display mortality or, even better, incidence rates of specific Cancer types across counties.
 
 <h4 align="center" id="figure-5">Figure 5</h4>
@@ -72,6 +76,7 @@ Though the map is aesthetically pleasing and does well to represent the incidenc
 | Synchronized US County Map showing Cancer Mortality Rate (CDC) |
 
 ## 5. Contribution<a name="contribution"/>
+
 I made the following novel contributions to the existing visualizations by exploring thematic mapping methods (specifically Choropleth and Bubble maps):
 - CDC’s national cancer incidence map (Figure 1) depicts cancer incidence rates at a macro level. We use New York state’s GeoJSON file to create a county map to display cancer incidence rates at the county level which is a more useful visualization as it offers healthcare policy makers a better understanding of the distribution of cancer cases across the state.
 
@@ -89,10 +94,14 @@ I made the following novel contributions to the existing visualizations by explo
 
 - Taking inspiration from CDC’s visualizations (Figure 2 and Figure 3), we create Bar graphs for the top 10 cancers according to incidence and mortality rates. But here, we go a few steps further – 1. We visualize it for males and females separately, and 2. We do this not only for rates, but for total numbers as well.
 
-## 5. Datasets and Methods<a name="methods"/>
-### 5.1. Phase 1: Data cleaning
+## 6. Datasets and Methods<a name="methods"/>
+
+### 6.1. Phase 1: Data cleaning
+
 I use the following publicly available datasets for our visualizations:
-### 5.1.1. New York State Department of Health, New York State Cancer Registry Cancer Incidence and Mortality by County and Gender, 2014-2018
+
+### 6.1.1. New York State Department of Health, New York State Cancer Registry Cancer Incidence and Mortality by County and Gender, 2014-2018
+
 Figure 6a is a snapshot from a comprehensive dataset that includes age-adjusted Cancer incidence and mortality rates by county and gender. 
 - Column headings in this table have subheadings and those subheadings have another layer of subheadings. To extract data efficiently, we clean the tables so that it only has a single row of column headers and a single column of row indexes.
 - The data in its raw form is in excel format. We decide to use Python’s pandas library to work with our data. So, we convert the excel dataset to a pandas dataframe.
@@ -112,7 +121,8 @@ Figure 6a is a snapshot from a comprehensive dataset that includes age-adjusted 
 |:--:|
 | Clean Dataset #1: County-wise Cancer incidence and Mortality Data for each type of Cancer (this specific dataframe is corresponding to ‘All Invasive Malignant Tumors’ |
 
-### 5.1.2. United States Environmental Protection Agency Air Quality Index Report
+### 6.1.2. United States Environmental Protection Agency Air Quality Index Report
+
 Dataset #2, shown in Figure 7a, includes Air Quality Index data by counties in New York. For each county, it lists the number of days the AQI was Good, Moderate, Unhealthy for Sensitive Groups, Unhealthy, and Very Unhealthy. It also lists the highest daily AQI value in the year, its 90th percentile value, and its median. Air Pollution is not only linked with Lung Cancer, but it's been shown to increase the risk of mortality for several other types of Cancer [9].
 
 <h4 align="center" id="figure-7a">Figure 7a</h4>
@@ -131,7 +141,7 @@ Figure 7b shows the cleaned version of this dataset.
 |:--:|
 | Clean Dataset #2: County-wise Air Quality Index |
 
-### 5.1.3. New York State Department of Health, Prevalence of Obesity among New York State Adults by County, BRFSS 2018
+### 6.1.3. New York State Department of Health, Prevalence of Obesity among New York State Adults by County, BRFSS 2018
 
 Dataset #3, shown in Figure 8a, includes the prevalence of obesity among adults by counties in New York. A population-based study using BMI and Cancer incidence data from the GLOBOCAN project estimated that, in 2012 in the United States, about 28,000 new cases of cancer in men (3.5%) and 72,000 in women (9.5%) were due to overweight or obesity [10].
 
@@ -148,6 +158,126 @@ This dataset doesn’t require much cleaning. We rename the column ‘Percent of
 | ![figure-8b.png](figures/figure-8b.png) |
 |:--:|
 |Clean dataset #3: County-wise Obesity data (New York State Department of Health) |
+
+### 6.1.4. New York State Department of Health, Prevalence of Current Smoking Among Adults in New York by County NYS BRFSS 2016
+
+Dataset #4, shown in Figure 9a, includes the prevalence of Adult smokers by counties in New York. Doctors have known for years that smoking causes most lung Cancers. It is still true today when nearly 9 out of 10 lung Cancers deaths are caused by smoking cigarettes or secondhand smoke exposure [11]. In addition, cigarette smoke contains many carcinogens that can cause Cancers almost anywhere in the body.
+
+This dataset doesn’t require much cleaning either. We rename the column ‘Percent of Adult Current\nSmokers (%)’ to ‘SmokingPercentage’ and store the data in a pandas dataframe. Figure 9b shows the cleaned version.
+
+<h4 align="center" id="figure-9a">Figure 9a</h4>
+
+| ![figure-9a.png](figures/figure-9a.png) |
+|:--:|
+| Dataset #4: County-wise Smoker data (New York State Department of Health) |
+
+<h4 align="center" id="figure-9b">Figure 9b</h4>
+
+| ![figure-9b.png](figures/figure-9b.png) |
+|:--:|
+| Dataset #4: Clean dataset #4: County-wise Smoker data |
+
+### 6.1.5. United States Census Bureau, Cartographic Boundary Files – Shapefile (2018)
+
+We use GeoJSON file (converted from shapefiles) for US Counties from the United States Census Bureau’s publicly available Cartographic Boundary files. [12]
+
+This JSON file contained GeoJSON data for counties all across the USA. We cleaned the data by removing information about counties of all states except that of New York.
+
+We use GeoJSON file (converted from shapefiles) for US Counties from the United States Census Bureau’s publicly available Cartographic Boundary files. [12]
+
+This JSON file contained GeoJSON data for counties all across the USA. We cleaned the data by removing information about counties of all states except that of New York.
+
+### 6.2. Phase 2: Initial Visualizations
+
+My goal here is to reprise visualizations discussed in the [Existing Visualizations](#existing-viz) section. We explored Altair’s python library and Plotly Express’ python library, finally settling on Plotly Express as it offers easy to use methods to create interactive visualizations
+
+### 6.2.1 Choropleth
+
+Figure 10a. shows one of the first Choropleths we created by using Plotly’s default settings. Even though we were impressed by the ease with which we could create an interactive plot using Plotly, there were a number of key areas that needed addressing.
+
+- The number of new cancer cases varies greatly across New York’s counties. On one hand, the county of New York has over 40,000 new cancer cases every year, and on the other hand a county like Yates has just 169 new cancer cases. Using a default continuous color scale in Plotly fails to show the distribution of total cases in indicators which have such a high difference between the maximum and minimum quantity.
+
+- We tried using a variety of different color scales, like the one in figure 10b., which corresponds to the color scale – ‘Matter’. It does look better than fig 10a., but it still fails to reveal differences in the number of cancer cases across most of New York’s counties.
+
+- So, we decided not to use Choropleth for total incidence number, and rather try it on incidence rates instead. And the results were pleasing – when the difference between max and min value is not large, choropleths worked wonderfully. Figure 10c. shows one of our first visualizations using incidence rate data using Plotly’s default settings.
+
+<h4 align="center" id="figure-10a">Figure 10a</h4>
+
+| ![figure-10a.png](figures/figure-10a.png) |
+|:--:|
+| Initial Choropleth plot for total incidence of cancer cases across all counties in New York |
+
+<h4 align="center" id="figure-10b">Figure 10b</h4>
+
+| ![figure-10b.png](figures/figure-10b.png) |
+|:--:|
+| Total incidence choropleth with color scale = ‘Matter’ |
+
+<h4 align="center" id="figure-10c">Figure 10c</h4>
+
+| ![figure-10c.png](figures/figure-10c.png) |
+|:--:|
+| Incidence rate choropleth with default color scale |
+
+### 6.2.2 Bubble Map
+
+We decided to try out Bubble maps for the total incidence numbers as choropleths were not a good choice for it. Figure 11a. shows one of the first Bubble plots that we created for incidence data using Plotly’s default settings. Though there was a lot of scope for improvement, the bubble map conveys much more information about the distribution of total cancer cases when compared to choropleth.
+
+- We realized that we were using Plotly’s default map projection, and that was distorting the areas of the New York’s counties. We decided to use an equal area map projection for all our future plots using thematic mapping methods. We finally set it to Eckert IV. Figure 11b shows one of our first Bubble plots using Eckert IV and a better bubble size.
+
+- We observed that the bubbles were not clearly visible for the regions with low quantities, so we decided to increase the sizes of the bubbles. Figure 11c shows the bubble plot with an increased bubble size.
+
+- Comparing the results with the choropleths for total incidence numbers, we decided to use bubble maps for it.
+
+<h4 align="center" id="figure-11a">Figure 11a</h4>
+
+| ![figure-11a.png](figures/figure-11a.png) |
+|:--:|
+| Incidence rate bubble map with default Plotly settings |
+
+<h4 align="center" id="figure-11b">Figure 11b</h4>
+
+| ![figure-11b.png](figures/figure-11b.png) |
+|:--:|
+| Incidence rate bubble map with equal area map Projection |
+
+<h4 align="center" id="figure-11c">Figure 11c</h4>
+
+| ![figure-11c.png](figures/figure-11c.png) |
+|:--:|
+| Incidence rate bubble map with max bubble size=60 |
+
+### 6.2.3 Scatter Plots
+
+To find if cancers have correlations with common risk factors, we used pearsonr method from scipy.stats module to calculate the Pearson correlation coefficient
+
+Even though we were able to compute the correlation coefficients for a variety of cancers and their associated risk factors, we realized that visualizing through a scatterplot would convey this information in a better way.
+
+- Figure 12 shows our initial scatterplot visualization with Colorectal cancer's incidence rate on the Y axis and adult obesity percentage on the X axis.
+- The figure shows a clear correlation between the X and Y axes. We decided to visualize all correlations using scatterplots – which convey information in a clear and simple way.
+
+<h4 align="center" id="figure-12">Figure 12</h4>
+
+| ![figure-12.png](figures/figure-12.png) |
+|:--:|
+| Colorectal cancer’s incidence rate versus adult obesity percentage (default Scatterplot) |
+
+### 6.2.4 Bar Graphs
+
+To reprise CDC’s bar graphs representing cancers with the highest mortality and incidence rates, we decided to use Plotly’s inbuilt bar function.
+
+- Figure 13 shows one of the first bar graph visualizations that we created. There are still improvements to be made to make it look impactful, but we can clearly see the distribution of cancer cases across the top 10 cancers according to incidence and mortality rate.
+- As a result, we decided to use bar graphs to visualize top 10 cancers according to incidence and mortality rates for both males and females.
+
+The improvements and the visualizations that we created are discussed in the next section.
+
+<h4 align="center" id="figure-13">Figure 13</h4>
+
+| ![figure-13.png](figures/figure-13.png) |
+|:--:|
+| Bar Graph showing the top 10 Cancers according to incidence and mortality numbers |
+
+
 
 ## 10. References & Acknowledgements<a name="references"/>
 1.	https://gis.cdc.gov/Cancer/USCS/#/AtAGlance/<a name="1"/>
