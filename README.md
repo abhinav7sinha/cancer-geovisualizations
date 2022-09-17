@@ -12,6 +12,9 @@ Interactive geovisualizations of New York state's cancer statistics made using P
 9. [Future Work](#future-work)
 10. [References & Acknowledgements](#references)
 
+## 1. How to use<a name="how-to"/>
+//TODO
+
 ## 2. Abstract<a name="abstract"/>
 Cancer is a leading cause of death in the state of New York. In 2018, the latest year for which Cancer incidence data is available, New York reported 114,373 new cases - 4th highest in the country [[1](#1)]. The incidence rate was 472.2 per 100,000 people - highest among the ten states with the most cases. An increased incidence rate points to increased exposure to cancer-causing risk factors. Analyzing geographical Cancer data helps to identify emerging Cancer clusters, understand community screening needs, and direct surveillance efforts. In this project, I explore geographical visualization techniques to better understand the impact of various Cancers on New York's counties. I use New York Department of Health's publicly available Cancer registry dataset to Geovisualize county-wise Cancer data. Using data visualization design principles, I improve upon existing cancer visualizations for the State of New York - and discuss the process here.
 
@@ -140,7 +143,7 @@ This dataset doesn’t require much cleaning. We rename the column ‘Percent of
 |:--:|
 | Dataset #3: County-wise Obesity data (New York State Department of Health) |
 
-<h4 align="center" id="figure-8a">Figure 8b</h4>
+<h4 align="center" id="figure-8b">Figure 8b</h4>
 
 | ![figure-8b.png](figures/figure-8b.png) |
 |:--:|
