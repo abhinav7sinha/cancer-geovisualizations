@@ -277,6 +277,13 @@ The improvements and the visualizations that we created are discussed in the nex
 |:--:|
 | Bar Graph showing the top 10 Cancers according to incidence and mortality numbers |
 
+## 7. Results<a name="results"/>
+
+### 7.1.1. Visualize Cancer Data through Choropleth and Bubble Maps
+
+#### a. Incidence rates
+
+Incidence rate refers to the rate of new cases of cancer diagnosed each year. The following 3 plots show the incidence rate of new cancer cases per 100,000 people across New York’s counties from 2014 to 2018.
 
 
 ## 10. References & Acknowledgements<a name="references"/>
